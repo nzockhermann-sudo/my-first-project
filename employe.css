@@ -1,0 +1,267 @@
+/* style/employe.css */
+
+:root {
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --danger-color: #ef233c;
+  --danger-hover: #d90429;
+  --success-color: #4cc9f0;
+  --text-color: #2b2d42;
+  --light-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+svg {
+  width: 30px;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+.table-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+tr:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+tr:nth-child(even) {
+  background-color: #ef233b30;
+}
+
+tr:nth-child(odd) {
+  background-color: #4362ee30;
+}
+
+table svg {
+  width: 20px;
+}
+
+.sort-link {
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sort-link:hover {
+  color: var(--primary-color);
+}
+
+.sort-icon {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.action-cell {
+  display: flex;
+  gap: 10px;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* style/employe.css */
+
+/* ... vos styles existants ... */
+
+th:nth-child(4), /* Cibler le 4ème th (Actions) */
+td:nth-child(4) {
+  /* Cibler la 4ème td (Actions) */
+  width: 200px; /* Ajustez cette valeur selon vos besoins */
+  white-space: nowrap; /* Empêcher le texte de passer à la ligne */
+  overflow: hidden; /* Masquer le texte qui dépasse */
+  text-overflow: ellipsis; /* Ajouter des points de suspension pour indiquer le texte caché */
+}
+
+.action-cell {
+  display: flex;
+  gap: 5px; /* Réduire l'espacement entre les boutons si nécessaire */
+  flex-direction: row; /* Assurer que les boutons restent en ligne */
+  align-items: center; /* Alignement vertical au centre */
+}
+
+.btn {
+  padding: 8px 12px; /* Réduire le padding des boutons si nécessaire */
+  font-size: 12px; /* Réduire la taille de la police des boutons si nécessaire */
+}
+
+table svg {
+  width: 16px; /* Réduire la taille des icônes SVG si nécessaire */
+  margin-right: 5px; /* Ajouter un peu d'espace à droite des icônes */
+}
+
+.dash {
+  margin-top: 20px;
+}
+
+.dash a {
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #3a56d4;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.dash svg {
+  color: #d90429;
+}
+
+/* Responsive (ajustements pour les écrans plus petits) */
+@media (max-width: 768px) {
+  /* ... vos styles responsive existants ... */
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 120px; /* Ajuster la largeur pour les petits écrans */
+  }
+
+  .action-cell {
+    flex-direction: column; /* Afficher les boutons en colonne sur les petits écrans */
+    align-items: stretch; /* Étirer les boutons pour occuper toute la largeur */
+  }
+
+  .btn {
+    width: 100%; /* Les boutons prennent toute la largeur sur les petits écrans */
+    margin-bottom: 5px; /* Ajouter un peu d'espace entre les boutons en colonne */
+  }
+
+  table svg {
+    margin-right: 0; /* Supprimer la marge à droite des icônes en mode colonne */
+  }
+}

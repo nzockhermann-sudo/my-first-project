@@ -1,0 +1,101 @@
+/* style/index.css */
+
+/* style/index.css */
+:root {
+  --primary-color: #2563eb; /* Bleu plus moderne */
+  --primary-hover: #1d4ed8;
+  --background: #f4f4f4;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --footer-bg: #dddddd;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url(../images/vp.jpg);
+  background-size: cover; /* Pour que l'image couvre tout l'arrière-plan */
+  background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+  color: var(--text-color);
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  padding: 0.25rem;
+}
+
+.logo {
+  height: 40px;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+/* Contenu principal */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  backdrop-filter: contrast(150%) blur(5px) brightness(90%);
+  /**/
+}
+
+.auth-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 500px; /* Limite la largeur sur grand écran */
+}
+
+/* Image */
+.auth-card img {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+/* Boutons */
+.auth-link {
+  display: inline-block; /* Changé de "block" pour aligner côte à côte */
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.auth-link:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Pied de page */
+footer {
+  text-align: center;
+  background-color: var(--footer-bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-card {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .auth-link {
+    display: block; /* Empile les boutons sur mobile */
+    margin: 0.5rem auto;
+  }
+}

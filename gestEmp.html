@@ -1,0 +1,45 @@
+<!-- gestEmp.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des Employés</title>
+  <link rel="stylesheet" href="style/employe.css">
+</head>
+<body>
+  <h1>Gestion des Employés</h1>
+  <form id="ajouterForm">
+    <input type="text" name="nom" placeholder="Nom" required>
+    <input type="text" name="poste" placeholder="Poste" required>
+    <input type="number" step="0.01" name="salaire" placeholder="Salaire" required>
+    <button type="submit">Ajouter</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Poste</th>
+        <th>Salaire</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3>Modifier Employé</h3>
+      <form id="modifierForm">
+        <input type="hidden" name="id">
+        <input type="text" name="nom" required>
+        <input type="text" name="poste" required>
+        <input type="number" step="0.01" name="salaire" required>
+        <button type="submit">Enregistrer</button>
+        <button type="button" onclick="fermerModal()">Annuler</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

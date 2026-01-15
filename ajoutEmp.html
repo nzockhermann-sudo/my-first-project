@@ -1,0 +1,32 @@
+<!-- ajoutEmp.htm -->
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajouter un Employé</title>
+    <link rel="stylesheet" href="style/ajoutEmp.css" />
+  </head>
+  <body>
+    <form action="ajoutEmp.php" method="post">
+      <h1>Ajouter un Nouvel Employé</h1>
+      <div>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required />
+      </div>
+      <div>
+        <label for="poste">Poste :</label>
+        <input type="text" id="poste" name="poste" required />
+      </div>
+      <div>
+        <label for="salaire">Salaire :</label>
+        <input type="number" step="0.01" id="salaire" name="salaire" required />
+      </div>
+      <br />
+      <button type="submit">Ajouter l'Employé</button>
+      <button onclick="window.location.href='index.php'" type="button">
+        Annuler
+      </button>
+    </form>
+  </body>
+</html>

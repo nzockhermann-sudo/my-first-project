@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modifier un Employé</title>
+    <link rel="stylesheet" href="style/employe.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z"
+            />
+          </svg>
+          Modifier un Employé
+        </h1>
+        <button
+          class="btn btn-primary"
+          onclick="window.location.href='employes.php'"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M5.828 7l2.536 2.536L6.95 10.95 2 6l4.95-4.95 1.414 1.414L5.828 5H13a8 8 0 1 1 0 16H4v-2h9a6 6 0 1 0 0-12H5.828z"
+            />
+          </svg>
+          Retour à la liste
+        </button>
+      </div>
+
+      <div class="form-card">
+        <form id="employeeForm">
+          <input type="hidden" id="employeeId" />
+
+          <div class="form-group">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" class="form-control" required />
+          </div>
+
+          <div class="form-group">
+            <label for="poste">Poste</label>
+            <input type="text" id="poste" class="form-control" required />
+          </div>
+
+          <div class="form-group">
+            <label for="salaire">Salaire (€)</label>
+            <input
+              type="number"
+              id="salaire"
+              class="form-control"
+              step="0.01"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" required />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4z"
+                />
+              </svg>
+              Enregistrer
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Récupérer l'ID depuis l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const employeeId = urlParams.get("id");
+
+        if (employeeId) {
+          // Ici vous devrez faire un appel AJAX pour récupérer les données de l'employé
+          // Exemple avec fetch:
+          fetch(`getEmployee.php?id=${employeeId}`)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                document.getElementById("employeeId").value = data.employee.id;
+                document.getElementById("nom").value = data.employee.nom;
+                document.getElementById("poste").value = data.employee.poste;
+                document.getElementById("salaire").value =
+                  data.employee.salaire;
+                document.getElementById("email").value = data.employee.email;
+                document.getElementById("date_embauche").value =
+                  data.employee.date_embauche;
+              }
+            })
+            .catch((error) => {
+              console.error("Erreur:", error);
+              alert("Impossible de charger les données de l'employé");
+              window.location.href = "employes.php";
+            });
+        } else {
+          window.location.href = "employes.php";
+        }
+
+        // Gestion de la soumission du formulaire
+        document
+          .getElementById("employeeForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = {
+              id: document.getElementById("employeeId").value,
+              nom: document.getElementById("nom").value,
+              poste: document.getElementById("poste").value,
+              salaire: document.getElementById("salaire").value,
+              email: document.getElementById("email").value,
+              date_embauche: document.getElementById("date_embauche").value,
+            };
+
+            // Envoi des données au serveur
+            fetch("updateEmployee.php", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.success) {
+                  alert("Employé mis à jour avec succès");
+                  window.location.href = "employes.php";
+                } else {
+                  alert("Erreur lors de la mise à jour: " + data.message);
+                }
+              })
+              .catch((error) => {
+                console.error("Erreur:", error);
+                alert("Erreur lors de la communication avec le serveur");
+              });
+          });
+      });
+    </script>
+  </body>
+</html>

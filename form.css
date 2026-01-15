@@ -1,0 +1,207 @@
+/* Style/form.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* En-tête */
+header {
+  background-color: #2563eb;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Conteneur principal */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Conteneur du formulaire */
+.form-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  max-width: 420px;
+  text-align: center;
+}
+
+.form-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Champs de formulaire */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.4);
+  outline: none;
+}
+
+/* Bouton */
+.form-actions button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-actions button:hover {
+  background-color: #1e40af;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
+}
+
+.form-actions button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+}
+
+/* Lien vers l'inscription */
+.text-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.text-link a {
+  color: #2563eb;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.text-link a:hover {
+  text-decoration: underline;
+}
+
+/* Pied de page */
+footer {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Messages d'erreur et de succès */
+.text-red {
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+.text-green {
+  color: #16a34a;
+  font-size: 0.875rem;
+}
+
+.nc {
+  position: absolute;
+  color: #16a34a;
+  font-weight: bold;
+  top: 10%;
+}
+
+.dennied {
+  position: absolute;
+  color: #d31f1f;
+  font-weight: bold;
+  top: 10%;
+}
+
+.connecty {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+}
+
+.connect-user {
+  padding: 1rem;
+  margin-bottom: 20px;
+  color: #1e40af;
+  font-weight: bold;
+}
+
+.connecty .l {
+  text-decoration: none;
+  background: #f53d3d;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  margin: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.connecty .c {
+  text-decoration: none;
+  background: #2563eb;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.connecty .c:hover {
+  background: #1e40af;
+}
+
+.connecty .l:hover {
+  background: #d31f1f;
+}
+
+.dc {
+  margin-top: 30px;
+}

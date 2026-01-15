@@ -1,0 +1,174 @@
+/* Style/dashbord.css */
+a {
+  text-decoration: none;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête */
+.header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.header a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 5px 10px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #4a8a4a;
+  color: #fff;
+}
+
+/* Statistiques */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.stat {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.stat p {
+  font-size: 3rem;
+  margin: 0;
+  transition: 0.5s;
+}
+
+/* Couleurs des statistiques */
+.stat.blue {
+  background-color: #e0e7ff;
+  color: #4a4a8a;
+  border-left: 5px solid #4a4a8a;
+  border-bottom: 5px solid #4a4a8a;
+  grid-column: 1/2;
+}
+.stat.blue:hover {
+  border-left: 0px solid #4a4a8a;
+  border-bottom: 0px solid #4a4a8a;
+  background-color: #98b0ff;
+}
+
+.stat.green {
+  background-color: #e0ffe0;
+  color: #4a8a4a;
+  border-left: 5px solid #4a8a4a;
+  border-bottom: 5px solid #4a8a4a;
+  grid-column: 2/3;
+}
+.stat.green:hover {
+  border-left: 0px solid #4a8a4a;
+  border-bottom: 0px solid #4a8a4a;
+  background-color: #9bfe9b;
+}
+
+.stat.yellow {
+  background-color: #fffde0;
+  color: #8a8a4a;
+  border-left: 5px solid #8a8a4a;
+  border-bottom: 5px solid #8a8a4a;
+  grid-column: 3/4;
+}
+
+.stat.yellow:hover {
+  border-left: 0px solid #8a8a4a;
+  border-bottom: 0px solid #8a8a4a;
+  background-color: #fff78d;
+}
+
+.stat.lightblue {
+  background-color: #e0f0ff;
+  color: #4a8a8a;
+  border-left: 5px #4a8a8a solid;
+  border-bottom: 5px #4a8a8a solid;
+  grid-column: 4/5;
+}
+
+.stat.lightblue:hover {
+  border-left: 0px #4a8a8a solid;
+  border-bottom: 0px #4a8a8a solid;
+  transform: translate(10px 15px);
+  background-color: #83c3ff;
+}
+
+.h {
+  margin: 9px;
+}
+
+/* Tableau des projets */
+.projects {
+  margin-top: 20px;
+}
+
+.projects h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.projects table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.projects th,
+.projects td {
+  padding: 12px;
+  border: 1px solid #636363;
+  text-align: left;
+}
+
+.projects th {
+  background-color: #f0f0f0;
+}
+
+.col1 {
+  background-color: #ffcccc;
+}
+
+.col2 {
+  background-color: #fffacd;
+}
+
+.col3 {
+  background-color: #dfffd0;
+}
+
+.col4 {
+  background-color: #d5fffb;
+}
+
+.col5 {
+  background-color: #fdc9fd;
+}
+
+.col6 {
+  background-color: #d2d5ff;
+}
